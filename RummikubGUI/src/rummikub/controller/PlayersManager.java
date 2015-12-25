@@ -6,41 +6,31 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.List;
 import rummikub.controller.exception.DuplicateNameException;
 import rummikub.controller.exception.EmptyNameException;
 import rummikub.model.Player;
 
 public class PlayersManager {
 
-//    private final Players playersModel;
-//
-//    public PlayersManager() {
-//	playersModel = new Players();
-//    }
-//
-//    public Player addPlayer(String name, boolean isHuman) throws DuplicateNameException, EmptyNameException {
-//	if (name == null || name.isEmpty()){
-//	    throw new EmptyNameException();
-//	}
-//	Player newPlayer = new Player(name, isHuman);
-//	if (playersModel.isPlayerExists(newPlayer)) {
-//	    throw new DuplicateNameException();
-//	} else {
-//	    playersModel.addPlayer(newPlayer);
-//	}
-//	return newPlayer;
-//    }
-//
-//    public Collection<Player> getPlayers(){
-//	ArrayList<Player> sortedPlayersList = new ArrayList<>(playersModel.getPlayers());
-//	Collections.sort(sortedPlayersList, new PlayerComparator()) ;
-//	return sortedPlayersList;
-//    }
-//
-//    static class PlayerComparator implements Comparator<Player> {
-//	@Override
-//	public int compare(Player o1, Player o2) {
-//	    return o1.getName().compareTo(o2.getName());
-//	}
-//    }
+    List<Player> players = new ArrayList<Player>();
+    
+
+    public Player addPlayer(String name, boolean isHuman) throws DuplicateNameException, EmptyNameException {
+	if (name == null || name.isEmpty()){
+	    throw new EmptyNameException();
+	}
+        Player.PlayerType playerType = isHuman? Player.PlayerType.HUMAN : Player.PlayerType.COMPUTER; 
+	Player newPlayer = new Player(playerType, name);
+	if (players.contains(newPlayer)) {
+	    throw new DuplicateNameException();
+	} else {
+	    players.add(newPlayer);
+	}
+	return newPlayer;
+    }
+
+    public Collection<Player> getPlayers(){
+	return players;
+    }
 }
