@@ -1,4 +1,4 @@
-package Scenes;
+package scenes.gamePreferences;
 
 
 import java.net.URL;
@@ -26,7 +26,7 @@ import rummikub.model.Player;
  *
  * @author iblecher
  */
-public class PlayersController implements Initializable {
+public class GamePreferencesController implements Initializable {
 
     @FXML
     private TextField playerNameTextField;

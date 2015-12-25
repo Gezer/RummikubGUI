@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ScreensControlFrameWork;
 
 import java.net.URL;
@@ -12,7 +7,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.layout.StackPane;
-
 
 /**
  *
@@ -56,7 +50,6 @@ import javafx.scene.layout.StackPane;
                  getChildren().add(0, screens.get(name));
              } else {
                  //no one else been displayed, then just show 
-                 setOpacity(0.0);
                  getChildren().add(screens.get(name));
              }
              return true;

@@ -36,20 +36,22 @@ public class RummikubGUI extends Application {
         primaryStage.setScene(scene);
         
         mainContainer.setScreen(SceneIdentifier.MAIN_MENU_SCENE_NAME);
-        mainContainer.setScreen(SceneIdentifier.GAME_SCENE_NAME);
 
         primaryStage.show();
     }
     
     private void addAllScreens()
     {
-        
         mainContainer.loadScreen(SceneIdentifier.MAIN_MENU_SCENE_NAME, 
                                  SceneIdentifier.MAIN_MENU_SCENE_PATH);
         
         mainContainer.loadScreen(SceneIdentifier.GAME_SCENE_NAME, 
                                  SceneIdentifier.GAME_SCENE_PATH);
+        
+        mainContainer.loadScreen(SceneIdentifier.GAME_PREFERENCES_SCENE_NAME, 
+                                 SceneIdentifier.GAME_PREFERENCES_SCENE_PATH);
     }
+    
     /**
      * @param args the command line arguments
      */
